@@ -1,0 +1,21 @@
+{
+  "url": "https://youtu.be/FsGPxhidwGg?si=Qcgs-4NUwzTKPySn",
+  "use_stream": true,
+  "model": "yolov8m.pt",
+  "conf": 0.5,
+  "frame_skip": 4,
+  "resize": [
+    640,
+    360
+  ],
+  "count_mode": "ids",
+  "line_y": 180,
+  "direction": "down",
+  "save_video": false,
+  "output_path": "object_detection.mp4",
+  "write_footfall": true,
+  "show_window": false,
+  "metrics_interval": 0,
+  "csv_interval": 0,
+  "csv_path": "metrics.csv"
+}

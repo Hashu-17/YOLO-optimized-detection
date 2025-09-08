@@ -1,0 +1,32 @@
+import argparse
+import json
+from pathlib import Path
+
+from src.pipeline import run_pipeline
+
+def load_json(path):
+    if not Path(path).exists():
+        return {}
+    with open(path, "r", encoding="utf-8") as handle:
+        return json.load(handle)
+
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--config", default="config/default.json")
+    parser.add_argument("--url")
+    parser.add_argument("--output")
+    args = parser.parse_args()
+
+    config = load_json("config/default.json")
+    if args.config and args.config != "config/default.json":
+        config.update(load_json(args.config))
+    if args.url:
+        config["url"] = args.url
+        config["use_stream"] = True
+    if args.output:
+        config["output_path"] = args.output
+
+    run_pipeline(config)
+
+if __name__ == "__main__":
+    main()

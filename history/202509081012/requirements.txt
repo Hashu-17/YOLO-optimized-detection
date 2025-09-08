@@ -1,0 +1,15 @@
+matplotlib
+numpy
+opencv-python
+pandas
+pillow
+psutil
+py-cpuinfo
+pyyaml
+requests
+scipy
+torch
+torchvision
+tqdm
+ultralytics-thop
+yt-dlp

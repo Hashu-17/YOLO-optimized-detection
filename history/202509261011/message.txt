@@ -1,0 +1,1 @@
+adjust resize to 640x360
