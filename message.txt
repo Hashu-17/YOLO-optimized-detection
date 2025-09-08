@@ -1,1 +1,1 @@
-add quickstart doc
+add default config
