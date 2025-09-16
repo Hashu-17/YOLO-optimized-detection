@@ -1,1 +1,1 @@
-add fps meter
+add pipeline skeleton
