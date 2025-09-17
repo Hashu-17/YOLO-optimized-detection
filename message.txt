@@ -1,1 +1,1 @@
-add sample config
+add edge preset
