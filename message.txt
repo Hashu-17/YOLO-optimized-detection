@@ -1,1 +1,1 @@
-add pipeline doc
+add sample config
