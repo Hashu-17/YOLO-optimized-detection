@@ -1,1 +1,1 @@
-add edge preset
+add highres preset
