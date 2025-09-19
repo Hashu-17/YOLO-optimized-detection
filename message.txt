@@ -1,1 +1,1 @@
-add highres preset
+add line sample config
