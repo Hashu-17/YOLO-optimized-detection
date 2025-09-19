@@ -1,1 +1,1 @@
-add line sample config
+add line counter tests
