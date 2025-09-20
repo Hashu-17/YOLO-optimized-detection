@@ -1,1 +1,1 @@
-add config tests
+add optimization notes
