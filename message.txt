@@ -1,1 +1,1 @@
-add line counter tests
+add config tests
