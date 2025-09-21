@@ -1,8 +1,10 @@
 import cv2
+import time
 
 from .io.source import open_video_source
 from .tracking.tracker import load_model, track_frame
 from .counting.line_counter import LineCounter
+from .metrics.fps import FpsMeter
 
 def run_pipeline(config):
     url = config.get("video_file") or config.get("url")
@@ -36,6 +38,7 @@ def run_pipeline(config):
         line_y = int(config.get("line_y", out_h // 2))
         direction = config.get("direction", "down")
         counter = LineCounter(line_y=line_y, direction=direction)
+    meter = FpsMeter()
 
     frame_index = 0
     last_count = -1
@@ -62,7 +65,10 @@ def run_pipeline(config):
                 handle.write(str(count))
             last_count = count
 
-        fps_now = 0.0
+        metrics_interval = int(config.get("metrics_interval", 0))
+        fps_now = meter.update()
+        if metrics_interval > 0 and frame_index % metrics_interval == 0:
+            print(f"fps={fps_now:.1f} count={count}")
         if writer is not None:
             writer.write(frame)
         if config.get("show_window", True):
