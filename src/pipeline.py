@@ -60,7 +60,12 @@ def run_pipeline(config):
         fps_now = 0.0
         if writer is not None:
             writer.write(frame)
+        if config.get("show_window", True):
+            cv2.imshow("Detections + Tracking", frame)
+            if cv2.waitKey(1) & 0xFF == ord("q"):
+                break
 
     cap.release()
     if writer is not None:
         writer.release()
+    cv2.destroyAllWindows()
