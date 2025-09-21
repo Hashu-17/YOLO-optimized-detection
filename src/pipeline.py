@@ -2,6 +2,7 @@ import cv2
 
 from .io.source import open_video_source
 from .tracking.tracker import load_model, track_frame
+from .counting.line_counter import LineCounter
 
 def run_pipeline(config):
     url = config.get("video_file") or config.get("url")
@@ -31,6 +32,10 @@ def run_pipeline(config):
     count_mode = config.get("count_mode", "ids")
     seen_ids = set()
     counter = None
+    if count_mode == "line":
+        line_y = int(config.get("line_y", out_h // 2))
+        direction = config.get("direction", "down")
+        counter = LineCounter(line_y=line_y, direction=direction)
 
     frame_index = 0
     last_count = -1
