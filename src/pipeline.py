@@ -20,6 +20,13 @@ def run_pipeline(config):
         out_h = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
 
     writer = None
+    if config.get("save_video", True):
+        writer = cv2.VideoWriter(
+            config.get("output_path", "output.mp4"),
+            cv2.VideoWriter_fourcc(*"mp4v"),
+            cap.get(cv2.CAP_PROP_FPS) or 30,
+            (out_w, out_h),
+        )
 
     count_mode = config.get("count_mode", "ids")
     seen_ids = set()
@@ -51,5 +58,9 @@ def run_pipeline(config):
             last_count = count
 
         fps_now = 0.0
+        if writer is not None:
+            writer.write(frame)
 
     cap.release()
+    if writer is not None:
+        writer.release()
