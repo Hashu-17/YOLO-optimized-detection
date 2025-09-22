@@ -13,11 +13,14 @@ def load_json(path):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--config", default="config/default.json")
+    parser.add_argument("--preset", choices=["edge", "highres"])
     parser.add_argument("--url")
     parser.add_argument("--output")
     args = parser.parse_args()
 
     config = load_json("config/default.json")
+    if args.preset:
+        config.update(load_json(f"config/{args.preset}.json"))
     if args.config and args.config != "config/default.json":
         config.update(load_json(args.config))
     if args.url:
