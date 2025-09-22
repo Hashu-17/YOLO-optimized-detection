@@ -1,5 +1,6 @@
 import cv2
 import time
+import csv
 
 from .io.source import open_video_source
 from .tracking.tracker import load_model, track_frame
@@ -39,6 +40,14 @@ def run_pipeline(config):
         direction = config.get("direction", "down")
         counter = LineCounter(line_y=line_y, direction=direction)
     meter = FpsMeter()
+    csv_handle = None
+    csv_writer = None
+    csv_interval = int(config.get("csv_interval", 0))
+    if csv_interval > 0:
+        csv_handle = open(config.get("csv_path", "metrics.csv"), "a", encoding="utf-8", newline="")
+        csv_writer = csv.writer(csv_handle)
+        if csv_handle.tell() == 0:
+            csv_writer.writerow(["frame", "count", "fps"])
 
     frame_index = 0
     last_count = -1
@@ -69,6 +78,8 @@ def run_pipeline(config):
         fps_now = meter.update()
         if metrics_interval > 0 and frame_index % metrics_interval == 0:
             print(f"fps={fps_now:.1f} count={count}")
+        if csv_writer is not None and csv_interval > 0 and frame_index % csv_interval == 0:
+            csv_writer.writerow([frame_index, count, f"{fps_now:.1f}"])
         if writer is not None:
             writer.write(frame)
         if config.get("show_window", True):
@@ -79,4 +90,6 @@ def run_pipeline(config):
     cap.release()
     if writer is not None:
         writer.release()
+    if csv_handle is not None:
+        csv_handle.close()
     cv2.destroyAllWindows()
