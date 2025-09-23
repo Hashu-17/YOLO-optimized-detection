@@ -15,6 +15,7 @@ def main():
     parser.add_argument("--config", default="config/default.json")
     parser.add_argument("--preset", choices=["edge", "highres"])
     parser.add_argument("--url")
+    parser.add_argument("--video")
     parser.add_argument("--output")
     args = parser.parse_args()
 
@@ -26,6 +27,9 @@ def main():
     if args.url:
         config["url"] = args.url
         config["use_stream"] = True
+    if args.video:
+        config["video_file"] = args.video
+        config["use_stream"] = False
     if args.output:
         config["output_path"] = args.output
 
