@@ -16,6 +16,9 @@ def main():
     parser.add_argument("--preset", choices=["edge", "highres"])
     parser.add_argument("--url")
     parser.add_argument("--video")
+    parser.add_argument("--conf", type=float)
+    parser.add_argument("--skip", type=int)
+    parser.add_argument("--resize", nargs=2, type=int)
     parser.add_argument("--output")
     args = parser.parse_args()
 
@@ -30,6 +33,12 @@ def main():
     if args.video:
         config["video_file"] = args.video
         config["use_stream"] = False
+    if args.conf is not None:
+        config["conf"] = max(0.1, min(args.conf, 0.95))
+    if args.skip:
+        config["frame_skip"] = max(1, args.skip)
+    if args.resize:
+        config["resize"] = [max(1, args.resize[0]), max(1, args.resize[1])]
     if args.output:
         config["output_path"] = args.output
 
