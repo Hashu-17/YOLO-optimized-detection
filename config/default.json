@@ -2,20 +2,20 @@
   "url": "https://youtu.be/FsGPxhidwGg?si=Qcgs-4NUwzTKPySn",
   "use_stream": true,
   "model": "yolov8n.pt",
-  "conf": 0.5,
+  "conf": 0.45,
   "frame_skip": 5,
   "resize": [
     320,
     180
   ],
-  "count_mode": "ids",
+  "count_mode": "line",
   "line_y": 180,
   "direction": "down",
-  "save_video": false,
+  "save_video": true,
   "output_path": "object_detection.mp4",
   "write_footfall": true,
-  "show_window": false,
-  "metrics_interval": 0,
-  "csv_interval": 0,
+  "show_window": true,
+  "metrics_interval": 30,
+  "csv_interval": 30,
   "csv_path": "metrics.csv"
 }
