@@ -1,1 +1,1 @@
-adjust frame skip to 4
+adjust resize to 640x360
