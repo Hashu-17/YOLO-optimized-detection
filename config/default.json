@@ -9,13 +9,13 @@
     360
   ],
   "count_mode": "line",
-  "line_y": 180,
+  "line_y": 190,
   "direction": "down",
   "save_video": true,
   "output_path": "object_detection.mp4",
   "write_footfall": true,
   "show_window": true,
-  "metrics_interval": 30,
+  "metrics_interval": 35,
   "csv_interval": 30,
   "csv_path": "metrics.csv"
 }
