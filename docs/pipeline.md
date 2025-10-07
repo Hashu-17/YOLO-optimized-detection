@@ -9,4 +9,4 @@ counting, and metrics separate.
 - counting: count unique IDs or line crossings
 - metrics: fps and simple counters
 
-Default count mode: ids
+Default count mode: line
