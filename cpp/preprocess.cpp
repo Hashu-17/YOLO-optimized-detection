@@ -17,3 +17,15 @@ void normalize_rgb(const uint8_t* src, int width, int height, float* dst) {
         dst[i] = static_cast<float>(src[i]) / 255.0f;
     }
 }
+
+void chw_pack(const float* src, int width, int height, float* dst) {
+    const int plane = width * height;
+    for (int y = 0; y < height; ++y) {
+        for (int x = 0; x < width; ++x) {
+            const int idx = (y * width + x) * 3;
+            dst[y * width + x] = src[idx + 0];
+            dst[plane + y * width + x] = src[idx + 1];
+            dst[2 * plane + y * width + x] = src[idx + 2];
+        }
+    }
+}
