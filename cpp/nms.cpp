@@ -1,3 +1,4 @@
+// Simple NMS helper for experiments
 #include "nms.h"
 #include <algorithm>
 
