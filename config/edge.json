@@ -15,7 +15,7 @@
   "output_path": "object_detection_v1.mp4",
   "write_footfall": true,
   "show_window": false,
-  "metrics_interval": 35,
-  "csv_interval": 35,
+  "metrics_interval": 40,
+  "csv_interval": 40,
   "csv_path": "metrics.csv"
 }

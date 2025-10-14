@@ -1,1 +1,1 @@
-adjust csv interval to 40
+refresh presets
