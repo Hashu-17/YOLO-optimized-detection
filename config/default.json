@@ -1,6 +1,6 @@
 {
   "url": "https://youtu.be/FsGPxhidwGg?si=Qcgs-4NUwzTKPySn",
-  "use_stream": true,
+  "use_stream": false,
   "model": "yolov8n.pt",
   "conf": 0.45,
   "frame_skip": 4,
