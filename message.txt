@@ -1,1 +1,1 @@
-adjust frame skip to 3
+adjust resize to 320x180

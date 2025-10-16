@@ -5,8 +5,8 @@
   "conf": 0.35,
   "frame_skip": 3,
   "resize": [
-    640,
-    360
+    320,
+    180
   ],
   "count_mode": "line",
   "line_y": 200,
