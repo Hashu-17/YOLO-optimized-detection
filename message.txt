@@ -1,1 +1,1 @@
-tune confidence to 0.35
+adjust frame skip to 3

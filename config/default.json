@@ -3,7 +3,7 @@
   "use_stream": false,
   "model": "yolov8n.pt",
   "conf": 0.35,
-  "frame_skip": 4,
+  "frame_skip": 3,
   "resize": [
     640,
     360
