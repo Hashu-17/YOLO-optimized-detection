@@ -1,15 +1,15 @@
 {
   "url": "https://youtu.be/FsGPxhidwGg?si=Qcgs-4NUwzTKPySn",
-  "use_stream": true,
+  "use_stream": false,
   "model": "yolov8n.pt",
-  "conf": 0.45,
+  "conf": 0.35,
   "frame_skip": 6,
   "resize": [
     320,
     180
   ],
   "count_mode": "line",
-  "line_y": 200,
+  "line_y": 210,
   "direction": "down",
   "save_video": true,
   "output_path": "object_detection_v1.mp4",
