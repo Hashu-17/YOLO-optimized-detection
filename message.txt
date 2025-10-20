@@ -1,1 +1,1 @@
-adjust csv interval to 45
+refresh quickstart
