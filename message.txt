@@ -1,1 +1,1 @@
-refresh pipeline doc
+refresh optimization notes
