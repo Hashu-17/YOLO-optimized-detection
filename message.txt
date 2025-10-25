@@ -1,1 +1,1 @@
-nudge line to y=220
+adjust metrics interval to 50
