@@ -1,1 +1,1 @@
-adjust metrics interval to 50
+adjust csv interval to 50
