@@ -1,1 +1,1 @@
-refresh presets
+toggle stream default
