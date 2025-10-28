@@ -1,1 +1,1 @@
-refresh line counter tests
+refresh sample config
