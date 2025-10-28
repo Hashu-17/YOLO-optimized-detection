@@ -1,1 +1,1 @@
-refresh quickstart
+refresh pipeline doc
