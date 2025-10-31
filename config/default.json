@@ -12,7 +12,7 @@
   "line_y": 210,
   "direction": "down",
   "save_video": true,
-  "output_path": "object_detection_v2.mp4",
+  "output_path": "object_detection_v3.mp4",
   "write_footfall": true,
   "show_window": true,
   "metrics_interval": 55,
