@@ -16,6 +16,6 @@
   "write_footfall": true,
   "show_window": false,
   "metrics_interval": 60,
-  "csv_interval": 55,
+  "csv_interval": 60,
   "csv_path": "metrics.csv"
 }
