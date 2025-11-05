@@ -1,1 +1,1 @@
-toggle stream default
+tune confidence to 0.50

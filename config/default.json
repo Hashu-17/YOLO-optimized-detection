@@ -2,7 +2,7 @@
   "url": "https://youtu.be/FsGPxhidwGg?si=Qcgs-4NUwzTKPySn",
   "use_stream": false,
   "model": "yolov8n.pt",
-  "conf": 0.45,
+  "conf": 0.5,
   "frame_skip": 2,
   "resize": [
     640,
